@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { RedirectBtn } from "../ActionBtn/RedirectBtn";
 import { Input } from "../ui/input";
 
 export const Navbar = () => {
@@ -8,7 +8,8 @@ export const Navbar = () => {
       <a className="pb-2" href="/">
         <img src="logo.png" className="size-25" />
       </a>
-
+     
+    
       {/* Search bar */}
       <div>
         <Input placeholder="search movies..." />
@@ -16,7 +17,7 @@ export const Navbar = () => {
 
       {/* Sign In btn or Profile  */}
       <div>
-        <Button>Login</Button>
+        <RedirectBtn url="/login">Login</RedirectBtn>
       </div>
     </nav>
   );
