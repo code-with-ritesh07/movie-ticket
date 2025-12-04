@@ -9,6 +9,7 @@ import { LoginPage } from "./components/auth/Log/LoginPage.tsx";
 import { RegisterPage } from "./components/auth/register/register.tsx";
 import { MainLayout } from "./components/layouts/MainLayout.tsx";
 import { NotFound } from "./components/NotFound.tsx";
+import { TicketForm } from "./components/TicketForm.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <App />,
+      },
+      {
+        path: "/movie/:id",
+        element: <TicketForm />,
       },
     ],
   },

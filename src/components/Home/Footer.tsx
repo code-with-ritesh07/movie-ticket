@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <div className="w-screen bg-[#101828] flex gap-x-4 ">
       <div>
-        <img src="logo.png" alt="logo" className="size-40" />
+        <img src="/logo.png" alt="logo" className="size-40" />
       </div>
 
       <ul className="flex flex-wrap items-center text-white mb-6 text-sm font-medium text-body sm:mb-0">
