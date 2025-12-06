@@ -5,11 +5,16 @@ import { useNavigate } from "react-router";
 interface RedirectBtnProps {
   url: string;
   children: ReactNode;
+  className?: string;
 }
-export const RedirectBtn = ({ url, children }: RedirectBtnProps) => {
+export const RedirectBtn = ({ url, children, className }: RedirectBtnProps) => {
   const navigate = useNavigate();
   const handleRedirect = () => {
     navigate(url);
   };
-  return <Button onClick={handleRedirect}>{children}</Button>;
+  return (
+    <Button type="button" onClick={handleRedirect} className={className}>
+      {children}
+    </Button>
+  );
 };

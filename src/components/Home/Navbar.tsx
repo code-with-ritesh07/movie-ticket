@@ -9,6 +9,10 @@ export const Navbar = () => {
         <img src="/logo.png" className="size-25" />
       </a>
 
+      <div>
+        <a href="/dashboard">Go to Dashboard</a>
+      </div>
+      
       {/* Search bar */}
       <div>
         <Input placeholder="search movies..." />

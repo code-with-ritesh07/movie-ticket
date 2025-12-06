@@ -1,5 +1,11 @@
 import { movies } from "@/lib/constants";
-import { IndianRupee, Star, Timer, TvMinimalPlay } from "lucide-react";
+import {
+  Calendar,
+  IndianRupee,
+  Star,
+  Timer,
+  TvMinimalPlay,
+} from "lucide-react";
 import { useParams } from "react-router";
 import { Button } from "./ui/button";
 
@@ -84,6 +90,8 @@ const peopleNumber = ["1", "2", "3", "4"];
 const theaters = ["Kurla", "PVR", "Wadala", "IMax"];
 const times = ["3am to 6am", "10am to 1pm", "2am to 5pm", "6pm to 9pm"];
 
+const dates = ["17 april", "19 april", "21 april"];
+
 const BookingForm = () => {
   const [selectedTheater, setSelectedTheater] = useState("PVR");
   const handleTheater = (theater: string) => {
@@ -91,8 +99,12 @@ const BookingForm = () => {
   };
 
   const [selectedTime, setSelectedTime] = useState("3am to 6am");
+  const [selectedDate, setSelectedDate] = useState("17 april");
   const handleTime = (time: string) => {
     setSelectedTime(time);
+  };
+  const handleDate = (date: string) => {
+    setSelectedDate(date);
   };
   return (
     <div className="p-10 space-y-10">
@@ -108,6 +120,24 @@ const BookingForm = () => {
             <span key={people}>
               <Input type="radio" name="people" />{" "}
               <span className="font-bold"> {people}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="space-y-4">
+        <h1 className="text-xl font-medium ">Select Date</h1>
+        <div className="flex pl-4 gap-x-4">
+          {dates.map((date) => (
+            <span
+              onClick={() => handleDate(date)}
+              key={date}
+              className={cn(
+                "border-fuchsia-700 border-2 p-2 rounded-md h-20 w-30 flex justify-center items-center gap-2 cursor-pointer",
+                selectedDate === date ? "border-green-700" : ""
+              )}
+            >
+              <Calendar /> {date}
             </span>
           ))}
         </div>
